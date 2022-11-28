@@ -1,0 +1,44 @@
+package com.uv.aplication.analizadores;
+
+import org.springframework.stereotype.Component;
+
+import com.uv.aplication.mensajes.Desconocido;
+import com.uv.aplication.mensajes.Mensaje;
+import com.uv.aplication.mensajes.Saludo;
+
+@Component
+public class Lilith implements IAnalizador {
+
+    private Mensaje inicial;
+    private Mensaje ultimo;
+    private Mensaje porDefecto;
+
+    public Lilith() {
+        setPorDefecto(new Desconocido());
+        agregarNuevoMensaje(new Saludo());
+    }
+
+    @Override
+    public void agregarNuevoMensaje(Mensaje mensaje) {
+        if(inicial == null) {
+            inicial = mensaje;
+            ultimo = mensaje;
+            ultimo.setSiguienteMensaje(porDefecto);
+            return;
+        }
+        
+        ultimo.setSiguienteMensaje(mensaje);
+        ultimo = mensaje;
+        ultimo.setSiguienteMensaje(porDefecto);
+    }
+
+    @Override
+    public void setPorDefecto(Mensaje porDefecto) {
+        this.porDefecto = porDefecto;
+    }
+
+    @Override
+    public String generarRespuesta(String entrada) {
+        return inicial.generarRespuesta(entrada);
+    }
+}
