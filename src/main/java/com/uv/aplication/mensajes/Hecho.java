@@ -3,11 +3,11 @@ package com.uv.aplication.mensajes;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Presentacion extends Mensaje {
-    private String[] bancoDeRespuestas = {"Y yo soy Lilith, un placer ", "Mucho gusto, yo  soy Lilith, "};
-    private String[] bancoDePalabras = {"\\bme llamo\\b", "\\bme dicen\\b", "\\bmi nombre es\\b"};
+public class Hecho extends Mensaje {
+    private String[] bancoDeRespuestas = {"¿Por que lo crees asi?", "¿Que te hace pensar asi?", "¿Por que piensas eso?", "¿Eso es lo que crees?"};
+    private String[] bancoDePalabras = {"\\bes\\b", "\\bson\\b", "\\bsoy\\b", "\\bno soy\\b"};
     private int respuesta;
-    private String nombre;
+   
 
     private int elegirRespuesta() {
         respuesta++;
@@ -23,7 +23,6 @@ public class Presentacion extends Mensaje {
             Matcher ocurrencia = patron.matcher(entrada);
           
             if(ocurrencia.find()) {
-                nombre = entrada.substring(ocurrencia.end()).trim();
                 return true;
             }    
         }
@@ -33,6 +32,6 @@ public class Presentacion extends Mensaje {
 
     public String generarRespuesta(String entrada) {
         if(!es(entrada)) return siguienteMensaje.generarRespuesta(entrada);
-        return  bancoDeRespuestas[elegirRespuesta()] + " " + nombre;
+        return  bancoDeRespuestas[elegirRespuesta()];
     }
 }
