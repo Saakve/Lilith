@@ -5,6 +5,10 @@ import org.springframework.stereotype.Component;
 import com.uv.aplication.mensajes.Desconocido;
 import com.uv.aplication.mensajes.Mensaje;
 import com.uv.aplication.mensajes.Saludo;
+import com.uv.aplication.mensajes.Presentacion;
+import com.uv.aplication.mensajes.Despedida;
+import com.uv.aplication.mensajes.Hecho;
+import com.uv.aplication.mensajes.Emocion;
 
 @Component
 public class Lilith implements IAnalizador {
@@ -16,6 +20,10 @@ public class Lilith implements IAnalizador {
     public Lilith() {
         setPorDefecto(new Desconocido());
         agregarNuevoMensaje(new Saludo());
+        agregarNuevoMensaje(new Presentacion());
+        agregarNuevoMensaje(new Despedida());
+        agregarNuevoMensaje(new Hecho());
+        agregarNuevoMensaje(new Emocion());
     }
 
     @Override
