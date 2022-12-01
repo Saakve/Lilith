@@ -3,9 +3,11 @@ package com.uv.aplication.mensajes;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Emocion extends Mensaje {
-    private String[] bancoDeRespuestas = {"¿Que te hace sentir asi?", "¿Por que te encuentras asi?", "¿Eso es lo que sientes?"};
-    private String[] bancoDePalabras = {"\\bestoy\\b", "\\bme siento\\b", "\\bme encuentro\\b"};
+public class EmocionPositiva extends Mensaje {
+    private String[] bancoDeRespuestas = {"Me encantar esuchar eso, ¿Por que estás alegre?", "Eso es excelente. Cuentame mas", "Eso es bueno, ¿Puedo saber por que?", "Eso es genial, ¿que te paso?"};
+
+    private String[] bancoDePalabras = {"\\bfeliz\\b", "\\balegre\\b", "\\bsuper\\b", "\\bbien\\b", "\\excelente\\b", "\\bincreible\\b", "\\bsublime\\b", "\\bsensacional\\b"}; 
+
     private int respuesta;
    
 
@@ -17,7 +19,7 @@ public class Emocion extends Mensaje {
         return respuesta;
     }
 
-    public boolean es(String entrada) {
+    public boolean verificarTipoDeMensaje(String entrada) {
         for (String palabra : bancoDePalabras) {
             Pattern patron = Pattern.compile(palabra, Pattern.CASE_INSENSITIVE);
             Matcher ocurrencia = patron.matcher(entrada);
@@ -31,7 +33,7 @@ public class Emocion extends Mensaje {
     }
 
     public String generarRespuesta(String entrada) {
-        if(!es(entrada)) return siguienteMensaje.generarRespuesta(entrada);
+        if(!verificarTipoDeMensaje(entrada)) return siguienteMensaje.generarRespuesta(entrada);
         return  bancoDeRespuestas[elegirRespuesta()];
     }
 }
