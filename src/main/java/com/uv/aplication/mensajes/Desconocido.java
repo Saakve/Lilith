@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Desconocido extends Mensaje {
-    private String[] bancoDeRespuestas = {"No entendí lo que quieres decir", "¿Podrias ser mas claro?", "¿A que te refieres?"};
+    private String[] bancoDeRespuestas = {"Cuentame mas", "¿En serio?", "Cuentame algo mas", "Te escucho", "Dime mas", "¿Y que mas?"};
      private int respuesta;
    
     private int elegirRespuesta() {

@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class EmocionPositiva extends Mensaje {
-    private String[] bancoDeRespuestas = {"Me encantar esuchar eso, ¿Por que estás alegre?", "Eso es excelente. Cuentame mas", "Eso es bueno, ¿Puedo saber por que?", "Eso es genial, ¿que te paso?"};
+    private String[] bancoDeRespuestas = {"Me encantar esuchar eso, ¿Por que estás alegre?", "Eso es excelente. Cuentame mas", "Genial, ¿Puedo saber por que?", "Eso es genial, ¿me cuentas?"};
 
     private String[] bancoDePalabras = {"\\bfeliz\\b", "\\balegre\\b", "\\bsuper\\b", "\\bbien\\b", "\\excelente\\b", "\\bincreible\\b", "\\bsublime\\b", "\\bsensacional\\b"}; 
 

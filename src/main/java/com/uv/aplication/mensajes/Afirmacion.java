@@ -4,8 +4,8 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Afirmacion extends Mensaje{
-    private String[] bancoDeRespuestas = {"¿Estas seguro?", "¿Por qué crees que si?", "Interesante..."};
-    private String[] bancoDePalabras = {"\\bsi\\b", "\\bexactamente\\b", "\\bexacto\\b", "\\bclaro\\b", "\\btotalmente\\b", "\\creo\\b"};
+    private String[] bancoDeRespuestas = {"¿Lo has pensado dos veces", "Me parece que estas muy seguro", "¿Que te hace estar tan seguro?", "¿Siempre has sido tan seguro", "Tu seguridad es impresionante"};
+    private String[] bancoDePalabras = {"\\bsi\\b", "\\bexactamente\\b", "\\bexacto\\b", "\\bclaro\\b", "\\btotalmente\\b", "\\bcreo\\b"};
     private int respuesta;
 
     private int elegirRespuesta() {

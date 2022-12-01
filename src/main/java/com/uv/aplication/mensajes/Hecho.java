@@ -4,8 +4,8 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Hecho extends Mensaje {
-    private String[] bancoDeRespuestas = {"¿Por que lo crees asi?", "¿Que te hace pensar asi?", "¿Por que piensas eso?", "¿Eso es lo que crees?"};
-    private String[] bancoDePalabras = {"\\bes\\b", "\\bson\\b", "\\bsoy\\b", "\\bno soy\\b"};
+    private String[] bancoDeRespuestas = {"¿Por que lo crees asi?", "¿Que te hace pensar asi?", "¿Lo es?", "¿Eso es lo que crees?", "Piensalo dos veces"};
+    private String[] bancoDePalabras = {"\\bes\\b", "\\bson\\b", "\\bno soy\\b", "\\besta\\b"};
     private int respuesta;
    
 

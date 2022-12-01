@@ -12,6 +12,7 @@ import com.uv.aplication.mensajes.EmocionNegativa;
 import com.uv.aplication.mensajes.EmocionPositiva;
 import com.uv.aplication.mensajes.Afirmacion;
 import com.uv.aplication.mensajes.Negacion;
+import com.uv.aplication.mensajes.Pregunta;
 
 @Component
 public class Lilith implements IAnalizador {
@@ -30,6 +31,7 @@ public class Lilith implements IAnalizador {
         agregarNuevoMensaje(new EmocionPositiva());
         agregarNuevoMensaje(new Afirmacion());
         agregarNuevoMensaje(new Negacion());
+         agregarNuevoMensaje(new Pregunta());
     }
 
     @Override

@@ -4,9 +4,9 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class EmocionNegativa extends Mensaje {
-    private String[] bancoDeRespuestas = {"¿Que te hace sentir asi?", "¿Por que te encuentras asi?", "Cuentame, me interesa ayudarte", "Animo"};
+    private String[] bancoDeRespuestas = {"¿Que te hace sentir asi?", "¿Por que lo crees asi?", "Cuentame, me interesa ayudarte", "Es una lastima", "Podemos hablar de ello"};
 
-    private String[] bancoDePalabras = {"\\bfatal\\b", "\\bterrible\\b", "\\btriste\\b", "\\bmal\\b", "\\bdeprimido\\b", "\\bansiso\\b","\\binquieto\\b"};
+    private String[] bancoDePalabras = {"\\bfatal\\b", "\\bterrible\\b", "\\btriste\\b", "\\bmal\\b", "\\bdeprimido\\b", "\\bansioso\\b","\\binquieto\\b", "\\bmolesto\\b", "\\btristeza\\b","\\bcansado\\b", "\\bagotado\\b"};
     private int respuesta;
    
 

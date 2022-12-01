@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 
 public class Saludo extends Mensaje {
     private String[] bancoDeRespuestas = {"Hola soy lilith", "Saludos humano", "Hola que tal", "Hola", "Un gusto verte"};
-    private String[] bancoDePalabras = {"\\bhola\\b", "\\bsaludos\\b", "\\bhey\\b","\\bque tal\\b", "\\bbuenos dias\\b", "\\bbuenas\\b", "\\besta\\b"};
+    private String[] bancoDePalabras = {"\\bhola\\b", "\\bsaludos\\b", "\\bhey\\b","\\bque tal\\b", "\\bbuenos dias\\b"};
     private int respuesta;
 
     private int elegirRespuesta() {

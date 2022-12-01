@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Negacion extends Mensaje{
-    private String[] bancoDeRespuestas = {"¿Estas seguro?", "¿Por que crees que no?", "¿Te lo has cuestionado?", "Siempre se puede cambiar de opinion"};
+    private String[] bancoDeRespuestas = {"¿Estas seguro?", "¿Por que crees que no?", "¿Te lo has cuestionado?", "Siempre se puede cambiar de opinion", "Nada es imposible", "Todo puede cambiar"};
     private String[] bancoDePalabras = {"\\bno\\b", "\\bfalso\\b", "\\bnunca\\b", "\\bjamas\\b", "\\ben mi vida\\b", "\\bimposible\\b"};
     private int respuesta;
 
