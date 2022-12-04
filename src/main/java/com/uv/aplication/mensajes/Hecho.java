@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 
 public class Hecho extends Mensaje {
     private String[] bancoDeRespuestas = {"¿Por que lo crees asi?", "¿Que te hace pensar asi?", "¿Lo es?", "¿Eso es lo que crees?", "Piensalo dos veces"};
-    private String[] bancoDePalabras = {"\\bes\\b", "\\bson\\b", "\\bno soy\\b", "\\besta\\b"};
+    private String[] bancoDePalabras = {"\\bes\\b", "\\bson\\b", "\\bno soy\\b", "\\besta\\b", "\\beres\\b"};
     private int respuesta;
    
 

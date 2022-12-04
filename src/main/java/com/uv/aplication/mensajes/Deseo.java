@@ -3,11 +3,10 @@ package com.uv.aplication.mensajes;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Presentacion extends Mensaje {
-    private String[] bancoDeRespuestas = {"Y yo soy Lilith, un placer ", "Mucho gusto, yo  soy Lilith, ", "Es un lindo nombre. Yo soy Lilith, "};
-    private String[] bancoDePalabras = {"\\bme llamo\\b", "\\bme dicen\\b", "\\bmi nombre es\\b"};
+public class Deseo extends Mensaje{
+    private String[] bancoDeRespuestas = {"¿Que tanto lo deseas?", "¿Desde cuando lo quieres?", "¿Por que lo quieres?", "¿Que mas te gusta?", "¿Que mas disfrutas?", "Eres capaz de lograrlo"};
+    private String[] bancoDePalabras = {"\\bme gustaria\\b", "\\bdesearia\\b", "\\bdeseo\\b", "\\bquisiera\\b", "\\bquiero\\b"};
     private int respuesta;
-    private String nombre;
 
     private int elegirRespuesta() {
         respuesta++;
@@ -21,11 +20,8 @@ public class Presentacion extends Mensaje {
         for (String palabra : bancoDePalabras) {
             Pattern patron = Pattern.compile(palabra, Pattern.CASE_INSENSITIVE);
             Matcher ocurrencia = patron.matcher(entrada);
-          
-            if(ocurrencia.find()) {
-                nombre = entrada.substring(ocurrencia.end()).trim();
-                return true;
-            }    
+
+            if(ocurrencia.find()) return true;
         }
 
         return false;
@@ -33,6 +29,7 @@ public class Presentacion extends Mensaje {
 
     public String generarRespuesta(String entrada) {
         if(!verificarTipoDeMensaje(entrada)) return siguienteMensaje.generarRespuesta(entrada);
-        return  bancoDeRespuestas[elegirRespuesta()] + " " + nombre;
+        return  bancoDeRespuestas[elegirRespuesta()];
     }
+ 
 }
