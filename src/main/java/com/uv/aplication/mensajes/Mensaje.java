@@ -8,5 +8,5 @@ public abstract class Mensaje {
     }
 
     public abstract String generarRespuesta(String entrada);
-    public abstract boolean es(String entrada);
+    public abstract boolean verificarTipoDeMensaje(String entrada);
 }

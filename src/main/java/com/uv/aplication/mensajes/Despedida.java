@@ -4,8 +4,8 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Despedida extends Mensaje{
-    private String[] bancoDeRespuestas = {"Adios", "Cuidate", "Hasta luego", "Vuelve pronto"};
-    private String[] bancoDePalabras = {"\\badios\\b", "\\bhasta luego\\b", "\\bme voy\\b", "\\bnos vemos\\b", "\\bvuelvo luego\\b"};
+    private String[] bancoDeRespuestas = {"Aquí estaré", "Adios", "Hasta luego", "Vuelve pronto"};
+    private String[] bancoDePalabras = {"\\badios\\b", "\\bhasta luego\\b", "\\bme voy\\b", "\\bnos vemos\\b", "\\bvuelvo luego\\b", "\\bme tengo que ir\\b", "\\bdebo irme\\b"};
     private int respuesta;
 
     private int elegirRespuesta() {
@@ -16,7 +16,7 @@ public class Despedida extends Mensaje{
         return respuesta;
     }
 
-    public boolean es(String entrada) {
+    public boolean verificarTipoDeMensaje(String entrada) {
         for (String palabra : bancoDePalabras) {
             Pattern patron = Pattern.compile(palabra, Pattern.CASE_INSENSITIVE);
             Matcher ocurrencia = patron.matcher(entrada);
@@ -28,8 +28,8 @@ public class Despedida extends Mensaje{
     }
 
     public String generarRespuesta(String entrada) {
-        if(!es(entrada)) return siguienteMensaje.generarRespuesta(entrada);
-        return  bancoDeRespuestas[elegirRespuesta()];
+        if(!verificarTipoDeMensaje(entrada)) return siguienteMensaje.generarRespuesta(entrada);
+        return  bancoDeRespuestas[elegirRespuesta()] + ". Cuidate";
     }
  
 }

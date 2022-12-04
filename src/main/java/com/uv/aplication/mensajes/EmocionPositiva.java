@@ -3,9 +3,11 @@ package com.uv.aplication.mensajes;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Hecho extends Mensaje {
-    private String[] bancoDeRespuestas = {"¿Por que lo crees asi?", "¿Que te hace pensar asi?", "¿Lo es?", "¿Eso es lo que crees?", "Piensalo dos veces"};
-    private String[] bancoDePalabras = {"\\bes\\b", "\\bson\\b", "\\bno soy\\b", "\\besta\\b"};
+public class EmocionPositiva extends Mensaje {
+    private String[] bancoDeRespuestas = {"Me encantar esuchar eso, ¿Por que estás alegre?", "Eso es excelente. Cuentame mas", "Genial, ¿Puedo saber por que?", "Eso es genial, ¿me cuentas?"};
+
+    private String[] bancoDePalabras = {"\\bfeliz\\b", "\\balegre\\b", "\\bsuper\\b", "\\bbien\\b", "\\excelente\\b", "\\bincreible\\b", "\\bsublime\\b", "\\bsensacional\\b"}; 
+
     private int respuesta;
    
 

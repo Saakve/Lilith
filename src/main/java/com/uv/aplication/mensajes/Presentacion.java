@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 public class Presentacion extends Mensaje {
-    private String[] bancoDeRespuestas = {"Y yo soy Lilith, un placer ", "Mucho gusto, yo  soy Lilith, "};
+    private String[] bancoDeRespuestas = {"Y yo soy Lilith, un placer ", "Mucho gusto, yo  soy Lilith, ", "Es un lindo nombre. Yo soy Lilith"};
     private String[] bancoDePalabras = {"\\bme llamo\\b", "\\bme dicen\\b", "\\bmi nombre es\\b"};
     private int respuesta;
     private String nombre;
@@ -17,7 +17,7 @@ public class Presentacion extends Mensaje {
         return respuesta;
     }
 
-    public boolean es(String entrada) {
+    public boolean verificarTipoDeMensaje(String entrada) {
         for (String palabra : bancoDePalabras) {
             Pattern patron = Pattern.compile(palabra, Pattern.CASE_INSENSITIVE);
             Matcher ocurrencia = patron.matcher(entrada);
@@ -32,7 +32,7 @@ public class Presentacion extends Mensaje {
     }
 
     public String generarRespuesta(String entrada) {
-        if(!es(entrada)) return siguienteMensaje.generarRespuesta(entrada);
+        if(!verificarTipoDeMensaje(entrada)) return siguienteMensaje.generarRespuesta(entrada);
         return  bancoDeRespuestas[elegirRespuesta()] + " " + nombre;
     }
 }
