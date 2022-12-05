@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 public class EmocionNegativa extends Mensaje {
     private String[] bancoDeRespuestas = {"¿Que te hace sentir asi?", "¿Por que lo crees asi?", "Cuentame, me interesa ayudarte", "Es una lastima", "Podemos hablar de ello"};
 
-    private String[] bancoDePalabras = {"\\bfatal\\b", "\\bterrible\\b", "\\btriste\\b", "\\bmal\\b", "\\bdeprimido\\b", "\\bansioso\\b","\\binquieto\\b", "\\bmolesto\\b", "\\btristeza\\b","\\bcansado\\b", "\\bagotado\\b"};
+    private String[] bancoDePalabras = {"\\bfatal\\b", "\\bterrible\\b", "\\btriste\\b", "\\bmal\\b", "\\bdeprimido\\b", "\\bansioso\\b","\\binquieto\\b", "\\bmolesto\\b", "\\btristeza\\b","\\bcansado\\b", "\\bagotado\\b", "\\bagobiado\\b"};
     private int respuesta;
    
 
