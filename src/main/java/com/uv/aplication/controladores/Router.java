@@ -1,12 +1,14 @@
 package com.uv.aplication.controladores;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.uv.aplication.analizadores.IAnalizador;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class Router {
 
