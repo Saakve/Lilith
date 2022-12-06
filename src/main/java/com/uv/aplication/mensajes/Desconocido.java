@@ -1,8 +1,5 @@
 package com.uv.aplication.mensajes;
 
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-
 public class Desconocido extends Mensaje {
     private String[] bancoDeRespuestas = {"Cuentame mas", "¿En serio?", "Cuentame algo mas", "Te escucho", "Dime mas", "¿Y que mas?"};
      private int respuesta;
