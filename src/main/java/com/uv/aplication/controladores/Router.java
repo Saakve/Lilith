@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.uv.aplication.analizadores.IAnalizador;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://salmon-beach-090d0c410.2.azurestaticapps.net")
 @RestController
 public class Router {
 
