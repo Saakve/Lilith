@@ -7,6 +7,7 @@ public abstract class Mensaje {
         this.siguienteMensaje = siguienteMensaje;
     }
 
+    public abstract String eliminarAcentos(String entrada);
     public abstract String generarRespuesta(String entrada);
     public abstract boolean verificarTipoDeMensaje(String entrada);
 }
