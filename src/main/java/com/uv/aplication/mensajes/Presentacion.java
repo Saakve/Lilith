@@ -2,6 +2,7 @@ package com.uv.aplication.mensajes;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.text.Normalizer;
 
 public class Presentacion extends Mensaje {
     private String[] bancoDeRespuestas = {"Y yo soy Lilith, un placer ", "Mucho gusto, yo  soy Lilith, ", "Es un lindo nombre. Yo soy Lilith, "};
@@ -20,7 +21,7 @@ public class Presentacion extends Mensaje {
     public boolean verificarTipoDeMensaje(String entrada) {
         for (String palabra : bancoDePalabras) {
             Pattern patron = Pattern.compile(palabra, Pattern.CASE_INSENSITIVE);
-            Matcher ocurrencia = patron.matcher(entrada);
+            Matcher ocurrencia = patron.matcher(eliminarAcentos(entrada));
           
             if(ocurrencia.find()) {
                 nombre = entrada.substring(ocurrencia.end()).trim();
@@ -29,6 +30,12 @@ public class Presentacion extends Mensaje {
         }
 
         return false;
+    }
+
+    public String eliminarAcentos(String palabra) {
+        palabra = Normalizer.normalize(palabra, Normalizer.Form.NFD);
+        palabra = palabra.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        return palabra;
     }
 
     public String generarRespuesta(String entrada) {
