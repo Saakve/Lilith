@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.text.Normalizer;
 
 public class Afirmacion extends Mensaje{
-    private String[] bancoDeRespuestas = {"¿Lo has pensado dos veces", "Me parece que estás muy seguro", "¿Quá te hace estar tan seguro?", "¿Siempre has sido tan seguro", "Tu seguridad es impresionante"};
+    private String[] bancoDeRespuestas = {"¿Lo has pensado dos veces", "Me parece que estás muy seguro", "¿Qué te hace estar tan seguro?", "¿Siempre has sido tan seguro", "Tu seguridad es impresionante"};
     private String[] bancoDePalabras = {"\\bsi\\b", "\\bexactamente\\b", "\\bexacto\\b", "\\bclaro\\b", "\\btotalmente\\b", "\\bcreo\\b"};
     private int respuesta;
 
