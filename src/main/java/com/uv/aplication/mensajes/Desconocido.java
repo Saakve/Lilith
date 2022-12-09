@@ -1,5 +1,4 @@
 package com.uv.aplication.mensajes;
-import java.text.Normalizer;
 
 public class Desconocido extends Mensaje {
     private String[] bancoDeRespuestas = {"Cuentame más", "¿En serio?", "Cuéntame algo más", "Te escucho", "Dime más", "¿Y qué más?"};

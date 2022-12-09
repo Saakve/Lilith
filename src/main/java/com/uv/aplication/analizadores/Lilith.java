@@ -27,15 +27,15 @@ public class Lilith implements IAnalizador {
 
     public Lilith() {
         setPorDefecto(new Desconocido());
-        agregarNuevoMensaje(new Saludo());
         agregarNuevoMensaje(new Presentacion());
+        agregarNuevoMensaje(new Pregunta());
+        agregarNuevoMensaje(new Saludo());
         agregarNuevoMensaje(new Despedida());
+        agregarNuevoMensaje(new Negacion());
         agregarNuevoMensaje(new Hecho());
         agregarNuevoMensaje(new EmocionNegativa());
         agregarNuevoMensaje(new EmocionPositiva());
         agregarNuevoMensaje(new Afirmacion());
-        agregarNuevoMensaje(new Negacion());
-        agregarNuevoMensaje(new Pregunta());
         agregarNuevoMensaje(new Gusto());
         agregarNuevoMensaje(new Deseo());
         agregarNuevoMensaje(new Agradecimiento());
