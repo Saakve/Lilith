@@ -4,24 +4,19 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.text.Normalizer;
 
-public class Gusto extends Mensaje{
-    private String[] bancoDeRespuestas = {"¿Lo haces a menudo?", "¿Desde cuándo te gusta?", "Eso es interesante", "¿Qué más te gusta?", "¿Qué más disfrutas?", "¿Por qué te gusta?"};
-    private String[] bancoDePalabras = {"\\bme gusta\\b", "\\bgusto\\b", "\\bgusta\\b", "\\bdisfruto\\b", "\\badoro\\b", "\\bme encanta\\b"};
-    private int respuesta;
+public class Problema extends Mensaje{
+    private String[] bancoDeRespuestas = {"Estoy aquí para ayudarte", "Todo se puede resolver", "Es un tema delicado","Deberias reconsiderarlo, aún hay muchas oportunidades" , "No estas sola, yo estoy para ti","¿Cuál es el conflicto?", "Estoy aquí, ¿Puedo saber por qué?", "¿Cómo te encuentras hoy?", "Conmigo puedes estar comodo", "Debes cuidar tu salud"};
 
-    private int elegirRespuesta() {
-        respuesta++;
-        if(respuesta > bancoDeRespuestas.length - 1) {
-            respuesta %= bancoDeRespuestas.length;
-        }
-        return respuesta;
-    }
+    private String[] bancoDePalabras = {"\\bproblema\\b", "\\bproblemas\\b", "\\bsuicidio\\b", "\\bsuicidarme\\b", "\\bdepresion\\b" ,"\\bconflicto\\b", "\\banorexia\\b",
+    "\\besquizofrenia\\b", "\\besquizofrenico\\b", "\\bobesidad\\b"};
+    private int numProblema = 0;
 
     public boolean verificarTipoDeMensaje(String entrada) {
+        numProblema = 0;
         for (String palabra : bancoDePalabras) {
             Pattern patron = Pattern.compile(palabra, Pattern.CASE_INSENSITIVE);
             Matcher ocurrencia = patron.matcher(eliminarAcentos(entrada));
-
+            numProblema++;
             if(ocurrencia.find()) return true;
         }
 
@@ -36,7 +31,7 @@ public class Gusto extends Mensaje{
 
     public String generarRespuesta(String entrada) {
         if(!verificarTipoDeMensaje(entrada)) return siguienteMensaje.generarRespuesta(entrada);
-        return  bancoDeRespuestas[elegirRespuesta()];
+        return  bancoDeRespuestas[numProblema-1];
     }
  
 }

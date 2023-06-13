@@ -16,6 +16,7 @@ import com.uv.aplication.mensajes.Pregunta;
 import com.uv.aplication.mensajes.Gusto;
 import com.uv.aplication.mensajes.Deseo;
 import com.uv.aplication.mensajes.Agradecimiento;
+import com.uv.aplication.mensajes.Problema;
 
 @Component
 public class Lilith implements IAnalizador {
@@ -26,18 +27,19 @@ public class Lilith implements IAnalizador {
 
     public Lilith() {
         setPorDefecto(new Desconocido());
-        agregarNuevoMensaje(new Saludo());
         agregarNuevoMensaje(new Presentacion());
+        agregarNuevoMensaje(new Pregunta());
+        agregarNuevoMensaje(new Saludo());
         agregarNuevoMensaje(new Despedida());
+        agregarNuevoMensaje(new Negacion());
         agregarNuevoMensaje(new Hecho());
         agregarNuevoMensaje(new EmocionNegativa());
         agregarNuevoMensaje(new EmocionPositiva());
         agregarNuevoMensaje(new Afirmacion());
-        agregarNuevoMensaje(new Negacion());
-        agregarNuevoMensaje(new Pregunta());
         agregarNuevoMensaje(new Gusto());
         agregarNuevoMensaje(new Deseo());
         agregarNuevoMensaje(new Agradecimiento());
+        agregarNuevoMensaje(new Problema());
     }
 
     @Override
